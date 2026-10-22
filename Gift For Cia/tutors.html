@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulasi Perjalanan Obat</title>
+    <link rel="stylesheet" href="tutors.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="panel controls">
+        <h1>Drug Flow</h1>
+
+        <div class="section-label">Jenis Obat</div>
+        <div class="drug-list" id="drugList"></div>
+
+        <button id="simulateBtn" class="simulate-btn">Mulai simulasi</button>
+      </aside>
+
+      <main class="panel center-panel">
+        <div class="topbar">
+          <span>Alur obat</span>
+          <span id="routeLabel">Oral</span>
+        </div>
+
+        <div class="route" id="route"></div>
+
+        <div class="organs-grid" id="organsGrid"></div>
+      </main>
+
+      <aside class="panel detail-panel">
+        <div class="card">
+          <span class="pill" id="drugBadge">Analgesik</span>
+          <h2 id="detailDrugName">Paracetamol</h2>
+          <p id="detailSummary">
+            Obat masuk melalui mulut, diserap, lalu diproses oleh hati.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Informasi Dosis</h3>
+          <p id="dosageInfo"></p>
+          <p><strong>Indikasi:</strong> <span id="indications"></span></p>
+          <p><strong>Efek Samping:</strong> <span id="sideEffects"></span></p>
+          <p><strong>Kontraindikasi:</strong> <span id="contraindications"></span></p>
+        </div>
+
+        <div class="card">
+          <h3 id="activeNodeText">Mulut</h3>
+          <p id="activeNodeDesc">
+            Obat mulai masuk ke saluran pencernaan.
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <script src="tutors.js"></script>
+  </body>
+</html>

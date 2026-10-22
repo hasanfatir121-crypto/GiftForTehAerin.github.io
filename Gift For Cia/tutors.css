@@ -1,0 +1,338 @@
+:root {
+  --bg: #071421;
+  --bg-2: #0c1d2d;
+  --panel: #10263d;
+  --panel-2: #14314d;
+  --card: rgba(255, 255, 255, 0.04);
+  --line: rgba(255, 255, 255, 0.08);
+  --text: #edf7ff;
+  --muted: #b4c7d9;
+  --primary: #7ee6d4;
+  --primary-2: #6db0ff;
+  --gold: #ffd166;
+  --danger: #ff7b72;
+  --shadow: rgba(2, 10, 17, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Inter, Arial, sans-serif;
+  background: radial-gradient(circle at top, #0f2338 0%, var(--bg) 60%);
+  color: var(--text);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.app {
+  width: min(1400px, 100%);
+  min-height: 860px;
+  display: grid;
+  grid-template-columns: 300px 1fr 320px;
+  gap: 20px;
+  background: rgba(7, 20, 33, 0.8);
+  border: 1px solid rgba(126, 230, 212, 0.15);
+  border-radius: 28px;
+  padding: 20px;
+  box-shadow: 0 30px 80px var(--shadow);
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(16, 38, 61, 0.95), rgba(10, 20, 32, 0.95));
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.controls h1 {
+  margin: 0 0 18px;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.section-label {
+  margin: 20px 0 10px;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.drug-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.drug-btn {
+  width: 100%;
+  text-align: left;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  color: var(--text);
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.drug-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(126,230,212,0.6);
+}
+
+.drug-btn.active {
+  background: rgba(126,230,212,0.12);
+  border-color: rgba(126,230,212,0.7);
+  box-shadow: inset 0 0 0 1px rgba(126,230,212,0.2);
+}
+
+.drug-name {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.drug-meta {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.simulate-btn {
+  width: 100%;
+  margin-top: 22px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #09151d;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 14px 18px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.simulate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(110,176,255,0.25);
+}
+
+.center-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 18px 20px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 6px 0;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.route {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 22px 12px 18px;
+  min-height: 140px;
+}
+
+.route-node {
+  position: relative;
+  min-width: 96px;
+  height: 86px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: all 0.3s ease;
+}
+
+.route-node.active {
+  background: rgba(126,230,212,0.12);
+  border-color: rgba(126,230,212,0.7);
+  color: var(--text);
+  box-shadow: 0 0 24px rgba(126,230,212,0.24);
+}
+
+.route-node::after {
+  content: "";
+  position: absolute;
+  right: -19px;
+  top: 50%;
+  width: 18px;
+  height: 2px;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.18);
+}
+
+.route-node:last-child::after {
+  display: none;
+}
+
+.route-node .mini-dot {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 12px rgba(126,230,212,0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.route-node.active .mini-dot {
+  opacity: 1;
+}
+
+.organs-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 18px;
+  padding: 14px 6px 0;
+}
+
+.organ-card {
+  min-height: 130px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 18px;
+  padding: 10px 12px;
+  text-align: center;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.organ-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(126,230,212,0.5);
+  background: rgba(126,230,212,0.05);
+}
+
+.organ-card.active {
+  border-color: rgba(126,230,212,0.8);
+  background: rgba(126,230,212,0.1);
+  box-shadow: 0 0 30px rgba(126,230,212,0.25);
+}
+
+.organ-icon {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.organ-name {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.organ-card.active .organ-name {
+  color: var(--text);
+}
+
+.detail-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.pill {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: rgba(126,230,212,0.1);
+  border: 1px solid rgba(126,230,212,0.25);
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: var(--primary);
+}
+
+@media (max-width: 1100px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .route {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .organs-grid {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}

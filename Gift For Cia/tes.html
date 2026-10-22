@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hiragana Test</title>
+
+    <link rel="stylesheet" href="tes.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- =========================
+             START PAGE
+        ========================== -->
+
+        <section id="startPage" class="page active">
+
+            <div class="card">
+
+                <div class="mascot">
+                    👹
+                </div>
+
+                <h1>ひらがな</h1>
+
+                <h2>Hiragana Test</h2>
+
+                <p class="subtitle">
+                    Uji kemampuan membaca Hiragana kamu!
+                    <br>
+                    Jawab 20 soal dan lihat seberapa baik kemampuanmu.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info">
+                        <strong>20</strong>
+                        <span>Jumlah Soal</span>
+                    </div>
+
+                    <div class="info">
+                        <strong>1–100</strong>
+                        <span>Nilai</span>
+                    </div>
+
+                    <div class="info">
+                        <strong>80+</strong>
+                        <span>Lulus</span>
+                    </div>
+
+                </div>
+
+                <button id="startButton" class="main-button">
+                    Mulai Tes
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             QUIZ PAGE
+        ========================== -->
+
+        <section id="quizPage" class="page">
+
+            <div class="card">
+
+                <div class="quiz-header">
+
+                    <span id="questionNumber">
+                        Soal 1 / 20
+                    </span>
+
+                    <span>
+                        Skor:
+                        <strong id="currentScore">0</strong>
+                    </span>
+
+                </div>
+
+                <div class="progress-container">
+                    <div id="progressBar"></div>
+                </div>
+
+                <div class="mascot">
+                    👹
+                </div>
+
+                <p id="speechText" class="speech">
+                    Pilih jawaban yang benar!
+                </p>
+
+                <div id="hiraganaCharacter">
+                    あ
+                </div>
+
+                <div id="answers"></div>
+
+                <button id="nextButton">
+                    Soal Berikutnya →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESULT PAGE
+        ========================== -->
+
+        <section id="resultPage" class="page">
+
+            <div class="card">
+
+                <div class="mascot">
+                    👹
+                </div>
+
+                <h1>Hasil Tes</h1>
+
+                <div id="resultTitle">
+                    Selesai!
+                </div>
+
+                <div id="finalScore">
+                    0
+                </div>
+
+                <p id="resultMessage">
+                    Hasil tes kamu akan muncul di sini.
+                </p>
+
+                <div class="result-stats">
+
+                    <div class="stat">
+
+                        <strong id="correctCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Jawaban Benar
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong id="wrongCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Jawaban Salah
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!--
+                    GANTI LINK INI
+                    jika lokasi website Kanji berbeda
+                -->
+
+                <a
+                    href="courses.html"
+                >
+                    📚 Lanjut Belajar Kanji
+                </a>
+
+                <br>
+
+                <button
+                    id="retryButton"
+                    class="main-button"
+                >
+                    🔄 Ulangi Tes
+                </button>
+
+                <p id="resultNote"></p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="tes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabel Periodik Interaktif</title>
+  <link rel="stylesheet" href="surat cinta.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>⚛️ Tabel Periodik Interaktif</h1>
+    <input type="text" id="searchInput" placeholder="Cari elemen (nama, simbol, nomor)..." />
+  </header>
+
+  <main class="container">
+    <div class="legend">
+      <span><i class="dot nonmetal"></i> Nonmetal</span>
+      <span><i class="dot metal"></i> Metal</span>
+      <span><i class="dot semimetal"></i> Semimetal</span>
+      <span><i class="dot halogen"></i> Halogen</span>
+      <span><i class="dot noble"></i> Gas Mulia</span>
+      <span><i class="dot alkali"></i> Alkali</span>
+      <span><i class="dot alkaline"></i> Alkali Tanah</span>
+    </div>
+
+    <div class="periodic-table" id="periodicTable"></div>
+
+    <aside class="detail-card" id="detailCard">
+      <button class="close-btn" id="closeBtn">×</button>
+      <div class="detail-head">
+        <div class="symbol" id="detailSymbol"></div>
+        <div>
+          <h2 id="detailName"></h2>
+          <small id="detailCategory"></small>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div><label>Nomor Atom</label><p id="detailNumber"></p></div>
+        <div><label>Massa Atom</label><p id="detailMass"></p></div>
+        <div><label>Konfigurasi</label><p id="detailConfig"></p></div>
+        <div><label>Elektron Valensi</label><p id="detailValence"></p></div>
+        <div><label>Keadaan</label><p id="detailState"></p></div>
+        <div><label>Elektronegativitas</label><p id="detailElectro"></p></div>
+      </div>
+
+      <div class="desc">
+        <h3>📝 Deskripsi</h3>
+        <p id="detailDescription"></p>
+      </div>
+
+      <div class="desc">
+        <h3>🔧 Kegunaan</h3>
+        <p id="detailUses"></p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="surat cinta.js"></script>
+</body>
+</html>

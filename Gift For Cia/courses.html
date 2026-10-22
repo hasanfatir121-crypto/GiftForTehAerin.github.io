@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Belajar 100 Kanji Dasar</title>
+    <a href="index.html" class="home">Main Page</a>
+
+    <link rel="stylesheet" href="courses.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="navbar">
+        <div class="card">
+            
+        </div>
+
+        <div class="logo">
+            <span class="logo-kanji">漢</span>
+            <span>Kanji Learning</span>
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#" class="active">Courses</a>
+            <a href="#">Quiz</a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="container">
+
+        <section class="hero">
+
+            <div>
+                <span class="badge">KANJI DASAR</span>
+
+                <h1>
+                    100 Kanji Dasar<br>
+                    untuk Pemula
+                </h1>
+
+                <p>
+                    Pelajari kanji Jepang melalui kartu sederhana,
+                    arti, cara baca, dan contoh kalimat sehari-hari.
+                </p>
+
+                <button id="startQuizBtn" class="primary-btn">
+                    🧠 Mulai Quiz
+                </button>
+            </div>
+
+            <div class="hero-kanji">
+                漢
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SEARCH & FILTER
+        ========================== -->
+
+        <section class="toolbar">
+
+            <div class="search-box">
+                <span>🔎</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Cari kanji, arti, atau cara baca..."
+                >
+            </div>
+
+            <select id="levelFilter">
+
+                <option value="all">
+                    Semua Kanji
+                </option>
+
+                <option value="N5">
+                    JLPT N5
+                </option>
+
+                <option value="N4">
+                    JLPT N4
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- =========================
+             PROGRESS
+        ========================== -->
+
+        <section class="progress-section">
+
+            <div class="progress-info">
+
+                <strong>
+                    Progress Belajar
+                </strong>
+
+                <span id="progressText">
+                    0 / 100 dipelajari
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    id="progressFill"
+                    class="progress-fill">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             KANJI CARDS
+        ========================== -->
+
+        <section>
+
+            <div
+                id="kanjiGrid"
+                class="kanji-grid">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         QUIZ MODAL
+    ========================== -->
+
+    <div
+        id="quizModal"
+        class="quiz-modal">
+
+        <div class="quiz-container">
+
+            <!-- CLOSE -->
+
+            <button
+                id="closeQuiz"
+                class="close-btn">
+                ×
+            </button>
+
+
+            <!-- =========================
+                 HERMES
+            ========================== -->
+
+            <div class="hermes-area">
+
+                <div class="hermes-avatar">
+
+                    <img
+                        id="hermesImage"
+                        src=""
+                        alt="Hermes">
+
+                </div>
+
+                <div class="hermes-dialog">
+
+                    <strong>
+                        Hermes
+                    </strong>
+
+                    <p id="hermesMessage">
+                        Siap belajar kanji?
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 QUIZ HEADER
+            ========================== -->
+
+            <div class="quiz-header">
+
+                <span id="questionNumber">
+                    Soal 1 / 10
+                </span>
+
+                <span id="scoreText">
+                    Skor: 0
+                </span>
+
+            </div>
+
+
+            <!-- =========================
+                 QUESTION
+            ========================== -->
+
+            <div class="question-card">
+
+                <p>
+                    Apa arti dari kanji berikut?
+                </p>
+
+                <div
+                    id="quizKanji"
+                    class="quiz-kanji">
+                    日
+                </div>
+
+                <div
+                    id="answerContainer"
+                    class="answers">
+                </div>
+
+            </div>
+
+
+            <button
+                id="nextQuestion"
+                class="next-btn"
+                disabled>
+
+                Soal Berikutnya →
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         SCRIPT
+    ========================== -->
+
+    <script src="courses.js"></script>
+
+</body>
+</html>
